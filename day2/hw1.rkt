@@ -65,8 +65,7 @@
 (define (my-max lst)
   (if 
   	(null? (rest lst))
-  	2
-  	; (first lst)
+  	(first lst)
   	(if
   	  (> (first lst) (my-max (rest lst))) 
 	  (first lst)
@@ -75,4 +74,4 @@
   )
 )
 
-(display (my-max '(1 10 2 20 3))) (newline) ;; -> 20
+(display (my-max '(1 10 2 20))) (newline) ;; -> 20
