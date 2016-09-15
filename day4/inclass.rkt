@@ -14,7 +14,16 @@
 (display (list-length '(a b a b))) (newline)
 
 (define (count-evens l)
-	(list-length (filter even? l))
+	(foldl
+		(lambda (elem cum) 
+			(if (even? elem)
+				(+ cum 1)
+				cum
+			)
+		)
+		0
+		l
+	)
 )
 
 (display (count-evens '())) (newline)
