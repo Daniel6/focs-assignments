@@ -21,16 +21,16 @@
     (list 'NEQ 
       (lambda (a b) (not (= a b)))
     )
-    (list 'ANND 
+    (list 'AND 
       (lambda (a b) (and a b))
     )
-    (list 'ORR 
+    (list 'OR 
       (lambda (a b) (or a b))
     )
     (list 'IPH 
       (lambda (a b c) (if a b c))
     )
-    (list 'NOTT not)
+    (list 'NOT not)
   )
 )
 
