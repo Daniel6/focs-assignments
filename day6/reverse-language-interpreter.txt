@@ -1,0 +1,3 @@
+To create a FSM that recognizes the reversed language L, simply take the simplest non-deterministic FSM that recognizes L and swap the initial and final nodes.
+
+For example, if language L is composed of the word '1011', the non-deterministic FSM that would recognize the reversed language L would be the same as in 1011_recognizer_nondeterministic.jff but with the initial and final nodes swapped and all the edges reversed.
