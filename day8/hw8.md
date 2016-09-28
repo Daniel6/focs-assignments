@@ -5,11 +5,11 @@ You may edit your answers into this file, or add a separate file in the same dir
 If you add a separate file, please include the following at the top:
 
 ```
-Student Name: Frankly Olin [change to your name]
+Student Name: Daniel Bishop
 Check one:
 [ ] I completed this assignment without assistance or external resources.
-[ ] I completed this assignment with assistance from ___
-   and/or using these external resources: ___
+[X] I completed this assignment with assistance from ___
+   and/or using these external resources: www.jflap.org/tutorial/pda/construct
 ```
 
 ## 1. For each of the following languages, decide whether it is regular
@@ -20,13 +20,19 @@ a) Strings containing only the symbol a whose length is a power of 2 (*i.e.* len
 
 [The strings `a`, `aa`, `aaaa`, and `aaaaaaaa` are in this language; the string `aaaaa` is not.]
 
+Not regular, if x = 'a', y = 'aa', and z = 'a', xyz is a word but xyyz is not.
+
 b) All strings with an equal number of occurrences of the substrings `01` and `10`.
 
 [010 is in this language; `000110` is in the language; `0101010` is in the language; but `010101` is not.]
 
+![1-2 answer](1-2.png)
+
 c) All strings (over {0,1}) consisting of a substring _w_ followed by the reverse of the substring.
 
 [The strings `00100100` and `11110101011010101111` are in this language; the strings `00100` and `010101 `are not.]
+
+Not regular, if x and z are not of the same length, then pumping y will result in a loss of symmetry and xyyz will not be in the language.
 
 ## 2. Play the pumping game
 
@@ -39,9 +45,22 @@ Notation notes:
 
 If you have other questions about notation (or anything else), please post them to [Piazza](https://piazza.com) so that we can clarify for everyone.
 
+Problem 1:
+My word: aaaabbbbb
+Computer chose: aaaa**b**bbbb
+Pumped string: aaaabbbb
+
+Problem 4:
+My word: aaaaaabbbbbbbbbbbaaaaaaaaaaaaaaaaa
+Computer chose: aaaaaabbbbbbbbbbbaaaaaaa**aaa**aaaaaaa
+Pumped string: aaaaaabbbbbbbbbbbaaaaaaaaaaaaaa
+
 ## 3. Create a PDA
 
 For one of the non-regular languages in problem 1 or 2 above, create a PDA (preferably in JFLAP) and include it with your completed homework.
+
+Pumping game problem 1 (less a's then b's):
+![1-2 answer](3-1.png)
 
 ## 4. Reading
 
