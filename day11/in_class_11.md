@@ -199,15 +199,13 @@ p -> s
 
 Prove: q
 
-1. Modus Tollens
-   p -> s 
-   !s
-   !p
-
-2. Specialization
-   !p -> q && r
-   q && r
-   q
+1. !p -> q && r
+2. p -> s
+3. !s
+4. !p             2, 3, Modus Tollens
+5. q && r         1, 4, Modus Ponens
+6. q              5, Specialization
+QED
 
 ### 3. Use rules of inference to prove the following:
 
@@ -218,19 +216,15 @@ s -> r
 
 Prove: !s
 
-1.  Specialization
-	p && q
-	q
-	p
-
-2.  Contradiction Rule
-	!(q && r)
-	!r
-
-3.  Modus Tollens
-	s -> r
-	!r
-	!s
+1. p && q
+2. p -> !(q && r)
+3. s -> r
+4. q              1, Specialization
+5. p              1, Specialization
+6. !(q && r)      1, 2, Modus Ponens
+7. !r             6, Specialization
+8. !s             3, 7, Modus Tollens
+QED
 
 ### 4. Use rules of inference to prove the following:
 
@@ -241,14 +235,11 @@ Assume:
 
 Prove:  q
 
-1.  Elimination
-	!(p || q) -> r
-	!p
-	!q -> r
-
-2.  Modus Tollens
-	!q -> r
-	!r
-	q
+1. !(p || q) -> r
+2. !p
+3. !r
+4. p || q          1, 3, Modus Tollens
+5. q               2, 4, Elimination
+QED
 
 ### 5. Replicate any of the proofs in 2, 3, or 4 using truth tables.
