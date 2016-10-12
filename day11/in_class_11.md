@@ -192,7 +192,7 @@ since the truth tables are the same, they are equivalent
 
 ### 2. Use rules of inference to prove the following:
 
-Assume:  
+Assume:
 !p -> q && r
 p -> s
 !s
@@ -209,7 +209,7 @@ QED
 
 ### 3. Use rules of inference to prove the following:
 
-Assume:  
+Assume:
 p && q
 p -> !(q && r)
 s -> r
