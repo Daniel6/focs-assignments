@@ -5,9 +5,9 @@ You may edit your answers into this file, or add a separate file in the same dir
 If you add a separate file, please include the following at the top.
 In either case, add your name and check one of the boxes.
 
-Student Name: Frankly Olin [change to your name]
+Student Name: Daniel Bishop
 Check one:
-[ ] I completed this assignment without assistance or external resources.
+[x] I completed this assignment without assistance or external resources.
 [ ] I completed this assignment with assistance from ___
     and/or using these external resources: ___
 
@@ -19,13 +19,13 @@ For each of the following pairs of functions, identify a multiplier and a minimu
 
 
   A. 367n+1098     and     2n                  [n0 = 40; k=200]
-  B. n^2 + 2n + 6    and     6n^2 - 25
-  C. n^3 + n^2 - 2n     and     6n^2 - 25
-  D. 869,438    and    923
-  E. 2^n    and    3^n
-  F. 3^n    and    2^n
-  G. log_2 n     and    log_10 n    [NB:  these are intended to be log-base-2 of n and log-base-10 of n]
-  H. log_10 n^2    and     log_2 n
+  B. n^2 + 2n + 6    and     6n^2 - 25         [n0 = 2.698; k=1]
+  C. n^3 + n^2 - 2n     and     6n^2 - 25      No such pairs, the first function will always grow faster because it has a greater order of growth.
+  D. 869,438    and    923                     [n0 = any; k=942]
+  E. 2^n    and    3^n                         [n0 = 0; k=1]
+  F. 3^n    and    2^n                         No such pairs, 3^n has a higher order of growth than 2^n.
+  G. log_2 n     and    log_10 n               [n0 = 1; k=4]  [NB:  these are intended to be log-base-2 of n and log-base-10 of n]
+  H. log_10 n^2    and     log_2 n             [n0 = 1; k=1]
 
 
 II. Linear data structures
@@ -35,16 +35,35 @@ For the following problem, assume that it costs 1 unit to access a structure -- 
 Assume that you have n elements stored in an array and the same n elements stored in a linked list; you have no other references to these data structures.  You may assume that n > 10.  How much does it cost to perform each of the following actions?
 
   A. Read the value of the first element in the array?  In the list?
+    array cost: 1 unit
+    list cost: 1 unit
   B. Read the value of the seventh element in the array?  In the list?
+    array cost: 1 unit
+    list cost: 7 units
   C. Add an element to the array?  [Where is the cheapest place to add it?]  To the list?  [Where is the cheapest place to add it?]
+    It is cheapest to add an element to the tail of an array or to the head of a list.
+    array cost: 1 unit
+    list cost: 1 unit
   D. Delete the fifth element from the array?  From the list?
+    array cost: n-4 units to shift everything down
+    list cost: 4 units to traverse to element 4 and point it at element 6
   E. Confirm that a particular element -- say x -- is present in the array?  In the list?
+    we do a search which is O(nlog(n)) complexity.
+    array cost: O(nlog(n)) units
+    list cost: O(nlog(n)) units also
   F. Confirm that a particular element -- say y -- is NOT present in the array?  In the list?
+    we have to look at every data piece
+    array cost: n units
+    list cost: n units
 
 Now assume that you can maintain one extra piece of storage for the data structure.  In the case of the array, you may want to maintain a length reference.
 In the case of the linked list, what would be similarly helpful?
+  It might be helpful to have a pointer to the last element, or a length field like the array.
 G. How much would it cost now to add an element to the end of the array?  To add an element to the end of the list?
+  It would only cost 1 unit each.
 H. How much would it cost now to delete an element from the array?  From the list?  What if it were the final element?  The penultimate element?
+  The costs for deletion would still be roughly the same, it would be easier to delete elements close to the end of a list though.
 
 Finally, assume that both the array and the linked list are sorted, i.e., that their elements are in some predictable order (say, comparable by < or <=).
   J. How much would it cost to confirm that a particular element -- say x -- is present in the array?  In the list?  To confirm that a particular element -- say y -- is not present in the array?  In the list?
+    It would cost O(n/2) since the list or array is effectively half length when tring to find a value and the values are sorted like so.
