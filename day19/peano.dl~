@@ -8,11 +8,6 @@ s(2, 3).
 s(3, 4).
 s(4, 5).
 s(5, 6).
-s(6, 7).
-s(7, 8).
-s(8, 9).
-s(9, ten).
-s(ten, 11).
 
 % sum axioms
 sum(A, B, C) :- A=C, B=0.
@@ -23,4 +18,3 @@ number(N) :- s(M, N).
 
 % product axioms
 product(A, B, C) :- number(A), B=0, C=0.
-product(A, SB, C) :- product(A, B, D), sum(A, D, C), s(B, SB).
